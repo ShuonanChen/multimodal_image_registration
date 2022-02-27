@@ -2,7 +2,7 @@
 
 This repository contains all the code used to run our code, to register *in vivo* and *ex vivo* images. Note that we assume that the cells in the images are segmented properly (we used [Cellpose](https://cellpose.readthedocs.io/en/latest/command.html) with some training data which works great). 
 
-## The files needed
+## The files needed (assuming pickle files)
 1. *ex vivo* image (as the target)
 2. *in vivo* image (as the source)
 1. *ex vivo* segmented result
@@ -16,7 +16,12 @@ This repository contains all the code used to run our code, to register *in vivo
 5. Fine-tuning using iterative non-rigid transformation based on the phase correlation
 
 ## The steps to run the code
-All our functions are available from `./functions`. Simply run the jupyter notebook `./run_registration.ipynb`. This notebook runs the above steps and generate the results of 
+All our functions are available from `./functions`. 
+Simply run the jupyter notebook `./run_registration.ipynb`. This notebook runs the above steps and output the following as the results:
+1. transformation parameters learned
+2. registered image 
+3. number of the matching cells. 
+
 
 ## Version information
 1. Python 3.7
