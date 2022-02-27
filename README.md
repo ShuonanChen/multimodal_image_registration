@@ -23,8 +23,23 @@ Simply run the jupyter notebook `./run_registration.ipynb`. This notebook runs t
 3. number of the matching cells. 
 
 
-## Version information
-1. Python 3.7
-2. MATLAB2022b
+## Version information and dependencies
+1. Python 3.9.7
+2. MATLAB2021b
+3. Python package dependencies:
 
+```
+# platform: linux-64
+
+scipy==1.7.3
+numpy==1.21.2
+scikit-image==0.18.3
+matplotlib==3.5.0
+connected-components-3d==3.8.0
+open3d==0.14.1
+opencv-python==4.5.5.62
+pandas==1.3.5
+scikit-image==0.18.3
+tqdm==4.62.3
+```
 
