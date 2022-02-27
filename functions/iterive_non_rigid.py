@@ -7,8 +7,8 @@ from skimage.transform import downscale_local_mean, resize, rescale, warp
 from skimage.registration import phase_cross_correlation
 from scipy import sparse
 import matplotlib.pyplot as plt
-from cellregister import ncc, tiling
-
+from cellregister import ncc
+import tiling
 
 def learn_and_apply_deformable(im1_happy,im2,vec_ds):
     time1=time.time()

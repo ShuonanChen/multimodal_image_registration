@@ -1,10 +1,10 @@
 clear
 clc
 close all
-cd('/home/ubuntu/code/Maximal-rotation-set')
+cd('./Maximal-rotation-set')
 
-load('./dst_X.mat')
-load('./dst_Y.mat')
+load('./MRS/dst_X.mat')
+load('./MRS/dst_Y.mat')
 size(X_dst)
 
 % creat mask
@@ -27,5 +27,5 @@ j0=y(1)
 
 
 
-save('./rot_dist_lb.mat','rot_dist_lb')
-
+save('./MRS/rot_dist_lb.mat','rot_dist_lb')
+exit;

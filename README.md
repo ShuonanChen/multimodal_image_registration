@@ -16,11 +16,7 @@ This repository contains all the code used to run our code, to register *in vivo
 5. Fine-tuning using iterative non-rigid transformation based on the phase correlation
 
 ## The steps to run the code
-All our functions are available from `./functions`. Simply follow the process:
-1. Run jupyter notebook `./generate_consensus.ipynb`. This will generate the files needed to run the maximum-rotation-set.
-2. Then run the matlab file `./run_MRS.m`. This will output the consensus set matrix. 
-3. Then run jupyter notebook `./genereate_registration_results.ipynb` which will create the output of the registrations. 
-
+All our functions are available from `./functions`. Simply run the jupyter notebook `./run_registration.ipynb`. This notebook runs the above steps and generate the results of 
 
 ## Version information
 1. Python 3.7
