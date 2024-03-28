@@ -10,15 +10,15 @@ import matplotlib.pyplot as plt
 from cellregister import ncc
 import tiling
 
-def learn_and_apply_deformable(im1_happy,im2,vec_ds):
+def learn_and_apply_deformable(im1_happy,im2,vec_ds, patch_sizes = (100,100,100), patch_boarder=(20,20,20), deform_kernel = 100):
     time1=time.time()
     im1_foo = downscale_local_mean(im1_happy,(vec_ds,vec_ds,vec_ds))  # to be transforme (zstack)
     im2_foo = downscale_local_mean(im2,(vec_ds,vec_ds,vec_ds)) # 
     ncc_1 = np.around(ncc(im1_foo,im2_foo), 3)
-    tile_szs = (100//vec_ds,100//vec_ds,100//vec_ds)
-    border_szs = (20//vec_ds,20//vec_ds,20//vec_ds)
+    tile_szs = (patch_sizes[0]//vec_ds,patch_sizes[1]//vec_ds,patch_sizes[2]//vec_ds)
+    border_szs = (patch_boarder[0]//vec_ds,patch_boarder[1]//vec_ds,patch_boarder[2]//vec_ds)
     tiles = tiling.tile_up_nd(im1_foo.shape, tile_szs, border_szs=border_szs)
-    ksz=100//vec_ds
+    ksz=deform_kernel//vec_ds
     out = im1_foo.copy()
     ncc_list = []
     vec_field_smooth_list = []  # so that we can apply to the binary image later!
